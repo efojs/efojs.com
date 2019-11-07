@@ -4,3 +4,7 @@ title: "EFOJS"
 
 # for Jekyll package "new post" command
 postFileType: ".md"
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
