@@ -1,10 +1,49 @@
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://www.efojs.com" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-title: "EFOJS"
+title: "Denis Krasulin"
 
-# for Jekyll package "new post" command
-postFileType: ".md"
+# Jekyll-Atom
+# for "new post" command
+postFileType: ".html"
+atom:
+  postDirs:
+    - _newsletters
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+collections:
+  categories:
+     order:
+       - selecta.md
+       - fullstack.md
+       - design.md
+       - ideas.md
+       - misc.md
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+
+excerpt_separator: <!-- more -->
+
+frontMatter:
+  - 'category:'
+  - 'name:'
+  - 'description:'
+  - 'tech_stack:'
+  - 'status:'
+  - 'icon:'
+  - 'nolink: true'
+  - 'link:'
+  - 'permalink:'
+  - 'git:'
