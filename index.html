@@ -1,24 +1,50 @@
 ---
 layout: default
 ---
+
+<h2>Career objective</h2>
+<div class="chunk--objective">
+  <ul>
+    <li>Full-stack development (Ruby, Python, JS)</li>
+    <li>Information architecture, UX design</li>
+    <li>Ideation</li>
+  </ul>
+</div>
+
 {% for cat in site.categories %}
-  <hr>
-  {% if cat.name %} <h2>{{ cat.name }}</h2> {% endif %}
-    {% assign filtered_posts = site.posts | where: 'category', cat.handle | where_exp: 'post', "post.status != 'draft'"  %}
+  {% assign filtered_posts = site.posts | where: 'category', cat.handle | where_exp: 'post', "post.draft != true"  %}
+  {% if filtered_posts != empty %}
+    <hr>
+    {% if cat.name %} <h2>{{ cat.name }}</h2> {% endif %}
     {% for post in filtered_posts %}
-      <div class="chunk">
-        <h3>
-          {% if post.nolink %}
-            {{ post.title }}
-          {% elsif post.link %}
-            <a href="{{ post.link }}">{{ post.title }}</a>
-          {% elsif post.permalink %}
-            <a href="{{ post.permalink }}">{{ post.title }}</a>
-          {% else %}
-            <a href={% link {{ post.path }} %}>{{ post.title }}</a>
-          {% endif %}
-        </h3>
-        <div>{{ post.excerpt }}</div>
+      <div class="chunk{% if post.chunk-class %}--{{post.chunk-class}}{% endif %}">
+
+        {% if post.notitle != true %}
+          <h3>
+            {% if post.nolink %}
+              {{ post.title }}
+            {% elsif post.link %}
+              <a href="{{ post.link }}">{{ post.title }}</a>
+            {% elsif post.permalink %}
+              <a href="{{ post.permalink }}">{{ post.title }}</a>
+            {% else %}
+              <a href={% link {{ post.path }} %}>{{ post.title }}</a>
+            {% endif %}
+          </h3>
+        {% endif %}
+
+        {% if post.icon %}
+          <div class="icon{% if post.icon-class %}--{{ post.icon-class }}{% endif %}">
+            <img src="/assets/icons/{{ post.icon }}">
+          </div>
+        {% endif %}
+        {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+        {% if post.tech_stack %} <p>{{ post.tech_stack }}</p> {% endif %}
+        {% if post.status %} <p>{{ post.status }}</p> {% endif %}
+        {{ post.excerpt }}
+
       </div>
     {% endfor %}
+  {% endif %}
+
 {% endfor %}

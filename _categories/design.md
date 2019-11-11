@@ -1,4 +1,4 @@
 ---
-name: UX,UI
+name: UX, UI
 handle: design
 ---

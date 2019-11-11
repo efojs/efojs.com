@@ -23,8 +23,11 @@
 
 <body>
   {% include header.html %}
+
   <main>
+    <div class="shadow-container"><div class="shad-top"></div></div>
     {{ content}}
+    <div class="shadow-container"><div class="shad-bot"></div></div>
   </main>
 
   {% include footer.html %}
