@@ -9,7 +9,13 @@
 </nav> -->
 <header>
   <div>
-    <h1>Denis Krasulin</h1>
+    {% if page.url == "/" %}
+      <h1>Denis Krasulin</h1>
+    {% else %}
+      <a href="/">
+        <h1>Denis Krasulin</h1>
+      </a>
+    {% endif %}
   </div>
   <div>
     <p>
