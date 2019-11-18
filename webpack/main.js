@@ -16,5 +16,8 @@
 // request.send();
 
 // alert("Yee!");
+import Maze from './components/Maze';
+
+
 let t = new Date();
 console.log(`webpacked at ${t.getHours()}:${t.getMinutes()}`);
