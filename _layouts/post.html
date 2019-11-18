@@ -10,4 +10,4 @@ layout: default
   {% endif %}
 </p>
 
-{{ content }}
+{{ page.content | remove: page.excerpt }}
