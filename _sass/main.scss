@@ -10,6 +10,8 @@ $colorObjective: rgb(226, 244, 252);
 $bodyFont: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
   sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
+@import 'maze';
+
 *,
 i.fab a {
 	font-family: 'Open Sans', sans-serif;
@@ -355,49 +357,10 @@ main {
 
 .chunk--maze {
   @extend .chunk;
-    div {
-      white-space: nowrap;
-  		text-align: center;
-    }
-    div,
-    span {
-      font-family: "Courier New", monospace;
-    }
-    .Dog {
-  		background-color: black;
-  		color: #ffffff;
-  	}
-
-  	.Exit {
-  		background-color: #00ce00;
-  		color: #ffffff;
-  		animation-name: exit-color;
-  		animation-duration: 2s;
-  		animation-iteration-count: infinite;
-  	}
-    @keyframes exit-color {
-  		0% {
-  			background-color: #00ce00;
-  		}
-  		30% {
-  			background-color: #00ff00;
-  		}
-  	}
-    .Player {
-  		color: #ffffff;
-  		background-color: #ff00ba;
-  		animation-name: player-color;
-  		animation-duration: 2s;
-  		animation-iteration-count: infinite;
-  	}
-    @keyframes player-color {
-  		0% {
-  			background-color: #ff00ba;
-  		}
-  		50% {
-  			background-color: #9f00ff;
-  		}
-  	}
+  div {
+    white-space: nowrap;
+		text-align: center;
+  }
 }
 
 @media (max-width: 50em) {

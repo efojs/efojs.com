@@ -1,0 +1,109 @@
+.Maze, .Maze span {
+    font-family: "Courier New", monospace;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.mazeApp {
+  text-align: center;
+  height: 100%;
+  padding-top: 2rem;
+  position: relative;
+  .Title {
+    margin-bottom: 1.5rem;
+  }
+
+  .Title span {
+    padding: 0.1rem 0.3rem;
+  }
+
+  .Score {
+    margin-left: 2rem;
+  }
+
+  .PlayerSelect {
+    cursor: pointer;
+    vertical-align: text-bottom;
+  }
+
+  .Buttons {
+    margin-bottom: 1.5rem;
+  }
+
+  .loading {
+    padding: 5rem 0;
+  }
+
+  .won,
+  .over {
+      /* filter: opacity(0.5); */
+  }
+  .won {
+    background-color: #bfff87;
+    color: #afdf77;
+  }
+  .finalImage {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+    height: auto;
+  }
+  .over {
+    background-color: #777780;
+    color: #ffffff;
+    color: #676770;
+    /* font-weight: bold; */
+  }
+  .over span {
+    background-color: #676770;
+    animation: none;
+  }
+  .won span {
+    background-color: #afdf77;
+    animation: none;
+  }
+
+  .noAnimation {
+    animation: none;
+  }
+}
+
+.Dog {
+	background-color: black;
+	color: #ffffff;
+}
+
+.Exit {
+	background-color: #00ce00;
+	color: #ffffff;
+	animation-name: exit-color;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+@keyframes exit-color {
+	0% {
+		background-color: #00ce00;
+	}
+	30% {
+		background-color: #00ff00;
+	}
+}
+.Player {
+	color: #ffffff;
+	background-color: #ff00ba;
+	animation-name: player-color;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+@keyframes player-color {
+	0% {
+		background-color: #ff00ba;
+	}
+	50% {
+		background-color: #9f00ff;
+	}
+}

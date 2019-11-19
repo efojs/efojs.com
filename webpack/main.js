@@ -16,7 +16,7 @@
 // request.send();
 
 // alert("Yee!");
-import Maze from './components/Maze';
+import Maze from './components/maze/Maze';
 
 
 let t = new Date();
