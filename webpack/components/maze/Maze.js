@@ -295,5 +295,3 @@ let maze = document.getElementById('maze-container');
 if (maze) {
     render(<App />, maze);
 }
-
-export default App;
