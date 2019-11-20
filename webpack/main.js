@@ -17,6 +17,7 @@
 
 // alert("Yee!");
 import Maze from './components/maze/Maze';
+import Dots from './components/dots/Dots';
 
 
 let t = new Date();

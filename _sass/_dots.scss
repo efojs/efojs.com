@@ -1,0 +1,71 @@
+.chunk--dots {
+  @extend .chunk;
+	width: 100%;
+  position: relative;
+}
+.dots {
+  height: 25rem;
+  padding: 2rem 0 3rem;
+}
+.DotsField {
+  cursor: pointer;
+  border: 1px dashed #79ccff;
+  height: 100%;
+  position: relative;
+
+  .Point {
+    display: inline-block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin-left: calc(-30px/2);
+    margin-top: calc(-30px/2);
+    cursor: pointer;
+  }
+
+  .Point:hover {
+    width: 40px;
+    height: 40px;
+    margin-left: calc(-40px/2);
+    margin-top: calc(-40px/2);
+    z-index: 2;
+  }
+
+  .Point:active {
+    width: 100px;
+    height: 100px;
+    margin-left: calc(-100px/2);
+    margin-top: calc(-100px/2);
+  }
+
+  .Point circle {
+    fill: rgba(33, 154, 214, 1.0);
+  }
+
+  .Point:hover circle {
+    fill: #ff8a00;
+  }
+  .Point:active circle {
+    fill: #ff0000;
+  }
+
+  .Empty {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #ff0000;
+    cursor: pointer;
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

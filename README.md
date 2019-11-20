@@ -8,12 +8,14 @@ https://jekyllrb.com/docs/collections/
 - Manually order posts
 
 ## Structure, layout
-Post:
+Post chunk:
 - 3 paragraphs:
   - description
   - tech_stack
   - status
 - figures with figcaptions
+- excerpt
+
 
 
 ## Webpack
@@ -26,3 +28,7 @@ Slightly modified:
 - to avoid double livereload: `exclude: ['webpack']`
 
 Run dev `npm start`
+
+## Used libraries
+
+- `axios` instead of `fetch` — https://stackoverflow.com/questions/40844297/what-is-difference-between-axios-and-fetch
