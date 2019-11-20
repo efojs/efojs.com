@@ -355,46 +355,6 @@ main {
 		}
 	}
 
-.chunk--maze {
-  @extend .chunk;
-  div {
-    white-space: nowrap;
-		text-align: center;
-  }
-}
-
-@media (max-width: 55em) {
-  .small-maze {
-		display: block;
-		margin-left: 0;
-	}
-	.large-maze,
-	.medium-maze {
-		display: none;
-	}
-}
-@media (min-width: 55em) {
-	.medium-maze {
-		display: block;
-		margin-left: 1rem;
-	}
-	.large-maze,
-	.small-maze {
-		display: none;
-	}
-}
-@media (min-width: 80em) {
-	.large-maze {
-		display: block;
-		margin-left: 2rem;
-	}
-	.medium-maze,
-	.small-maze {
-		display: none;
-	}
-}
-
-
 
 footer {
   background-color: $colorFooter;
