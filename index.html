@@ -38,9 +38,13 @@ layout: default
             <img src="/assets/icons/{{ post.icon }}">
           </div>
         {% endif %}
-        {% if post.description %}<p>{{ post.description }}</p>{% endif %}
-        {% if post.tech_stack %} <p>{{ post.tech_stack }}</p> {% endif %}
-        {% if post.status %} <p>{{ post.status }}</p> {% endif %}
+        {% if post.description %}
+          <div class="post-description">
+            <p>{{ post.description }}</p>
+            {% if post.tech_stack %} <p>{{ post.tech_stack }}</p> {% endif %}
+            {% if post.status %} <p>{{ post.status }}</p> {% endif %}
+          </div>
+        {% endif %}
         {{ post.excerpt }}
 
       </div>

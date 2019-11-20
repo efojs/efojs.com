@@ -1,9 +1,5 @@
 .chunk--maze {
   @extend .chunk;
-  div {
-    white-space: nowrap;
-		text-align: center;
-  }
 }
 
 @media (max-width: 55em) {
@@ -41,6 +37,7 @@
     font-family: "Courier New", monospace;
     white-space: nowrap;
     overflow-x: auto;
+    text-align: center;
 }
 
 .mazeApp {

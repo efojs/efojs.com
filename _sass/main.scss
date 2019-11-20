@@ -43,9 +43,6 @@ figcaption {
 h1 {
   font-size: 200%;
 }
-h1 {
-	font-size: 200%;
-}
 h2 {
 	font-size: 140%;
   margin-bottom: 0.1rem;
@@ -245,13 +242,7 @@ main {
 	border-color: $colorSides;
 }
 
-
-.chunk {
-  margin-bottom: 3rem;
-  position: relative;
-  figure {
-    margin-bottom: 0.5rem;
-  }
+.post-description {
   p {
     padding-left: 2rem;
   }
@@ -264,6 +255,14 @@ main {
   }
   p:last-of-type {
     margin-bottom: 2rem;
+  }
+}
+
+.chunk {
+  margin-bottom: 3rem;
+  position: relative;
+  figure {
+    margin-bottom: 0.5rem;
   }
   h3 {
     margin-bottom: 0.8rem;

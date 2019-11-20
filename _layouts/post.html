@@ -1,9 +1,11 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-<p>
-  {{ page.description }}
-</p>
+<h3>{{ page.title }}</h3>
+<div class="post-description">
+  {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+  {% if page.tech_stack %} <p>{{ page.tech_stack }}</p> {% endif %}
+  {% if page.status %} <p>{{ page.status }}</p> {% endif %}
+</div>
 
 {{ page.content | remove: page.excerpt }}
