@@ -1,11 +1,6 @@
 # EFOJS
-## Features
-Для группировки постов по категориям нужны коллекции
-https://jekyllrb.com/docs/collections/
-
 ## TODO
-- как быть с такими: Handcrafted pumpkin (making of) — ссылка на ютуб
-- Manually order posts
+- Manually sort posts
 
 ## Structure, layout
 Post chunk:
@@ -31,6 +26,6 @@ Slightly modified:
 
 Run dev `npm start`
 
-## Used libraries
+## Some used libraries
 
 - `axios` instead of `fetch` — https://stackoverflow.com/questions/40844297/what-is-difference-between-axios-and-fetch
