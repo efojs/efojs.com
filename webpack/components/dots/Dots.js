@@ -63,25 +63,28 @@ class Field extends React.Component {
     this.fetchPoints = this.fetchPoints.bind(this);
   }
 
-    fetchPoints (e) {
-        const fetchPromise = axios.get(`${config.api.invokeUrl}/points`);
-        fetchPromise.then(response => {
-          this.setState({
-            points: response.data
-          });
-        }).catch((err) => console.error(err));
-    }
+  fetchPoints (e) {
+      const fetchPromise = axios.get(`${config.api.invokeUrl}/points`);
+      fetchPromise.then(response => {
+        this.setState({
+          points: response.data
+        });
+      }).catch((err) => console.error(err));
+  }
 
    handleMouseDown (e) {
-    // e.preventDefault();
     e.persist();
-
-    let height = e.target.offsetHeight;
-    let width = e.target.offsetWidth;
-    let targetY = e.clientY-e.target.offsetTop;
-    let relativeY = targetY/height;
-    let targetX = e.clientX-e.target.offsetLeft;
-    let relativeX = targetX/width;
+    let target = e.target;
+    if (target.className == "Empty") {
+      target = target.parentElement;
+    }
+    const targetBox = target.getBoundingClientRect();
+    const height = targetBox.height;
+    const width = targetBox.width;
+    const targetY = e.clientY-targetBox.top;
+    const relativeY = targetY/height;
+    const targetX = e.clientX-targetBox.left;
+    const relativeX = targetX/width;
 
     if (relativeY >= 1 || relativeX >= 1) {
       relativeY = 0.5;
@@ -105,11 +108,6 @@ class Field extends React.Component {
     postResponse.then(() => {
       this.fetchPoints();
     }).catch((err) => console.error(err));
-  }
-
-  handleTextClick(e) {
-    e.preventDefault();
-    e.stopPropagation();
   }
 
   deletePoint (id) {
@@ -139,7 +137,7 @@ class Field extends React.Component {
           this.state.points && this.state.points.length > 0 ? (
             this.state.points.map(point => <Point onClick={this.deletePoint} top={point.top} left={point.left} id={point.id} key={point.id} />)
           ) : (
-            <div className="Empty" onClick={this.handleTextClick}>♥</div>
+            <div className="Empty">♥</div>
           )
         }
 
@@ -147,19 +145,6 @@ class Field extends React.Component {
     );
   }
 }
-
-class Op extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="">OPA</div>
-    );
-  }
-}
-
 
 let dots = document.getElementById('dots-container');
 if (dots) {
