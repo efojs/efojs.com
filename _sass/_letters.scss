@@ -1,0 +1,154 @@
+/* TODO: на узких экранах переворачивать */
+.chunk--letters {
+  @extend .chunk;
+}
+.letters-container {
+  background-color: rgb(49, 55, 69);
+  width: 100%;
+  color: rgb(178, 185, 189);
+  padding: 1rem 2rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  .tab-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .tab {
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+  }
+  .active {
+    background-color: rgb(100, 232, 224);
+    cursor: auto;
+    color: rgb(49, 55, 69);
+  }
+
+  .letters-chart {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    position: relative;
+  }
+  .no-data {
+    text-align: center;
+    /* vertical-align: middle; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .hist-bar {
+    position: relative;
+    text-align: center;
+    /* height: 1%; */
+    width: calc(70%/27);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .hist-bar div {
+    width: 50%;
+  }
+  .legend {
+    /* padding-top: 0.5rem; */
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .legend *:nth-child(2n) {
+    margin: 0 1rem 0 0.2rem;
+  }
+  .color-sample {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+
+  }
+  .all-letters {
+    background-color: rgb(203, 77, 77);
+  }
+  .all-letters.dim {
+    background-color: rgb(70, 63, 63);
+  }
+  .first-letters {
+    background-color: rgb(17, 128, 199);
+  }
+  .first-letters.dim {
+    background-color: rgb(51, 73, 89);
+  }
+  .letters-chart:hover .level {
+    display: block;
+  }
+  .level {
+    display: none;
+    /* height: 1px; */
+    width: 100%;
+    position: absolute;
+    border-bottom: 1px dotted rgb(127, 137, 143);
+    box-sizing: border-box;
+  }
+  .axis {
+    padding-top: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+  }
+  .axis span {
+    width: calc(70%/27);
+    text-align: center;
+  }
+  .textarea-container {
+    margin: auto;
+    max-width: 30rem;
+    width: 100%;
+  }
+  .button-container {
+    margin: auto;
+  }
+  textarea {
+    width: 100%;
+    height: 100%;
+    max-width: 30rem;
+    width: 100%;
+    margin: auto;
+    display: block;
+    margin-bottom: 1rem;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 135%;
+    padding: 0.3rem 0.5rem;
+  }
+  button {
+    margin: auto;
+    display: block;
+
+    border: none;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background: rgb(17, 128, 199);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 100%;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  button:active {
+    transform: scale(0.95);
+  }
+  button:disabled {
+    background-color: rgb(22, 106, 161);
+    color: rgb(146, 166, 185);
+  }
+
+
+  .display {
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
