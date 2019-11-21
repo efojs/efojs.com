@@ -16,6 +16,8 @@ Post chunk:
 - figures with figcaptions
 - excerpt
 
+Front matter:
+- permalink (with trailing `/` -> `folder/index.html`)
 
 
 ## Webpack
