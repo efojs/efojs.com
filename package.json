@@ -8,6 +8,7 @@
     "start": "webpack --watch | bundle exec jekyll serve --livereload",
     "wbuild": "webpack -p",
     "jbuild": "JEKYLL_ENV=production bundle exec jekyll build",
+    "deploy": "aws s3 cp ./_site s3://bucket_name --recursive"
   },
   "author": "Denis Krasulin",
   "license": "ISC",
