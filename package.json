@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack | bundle exec jekyll serve --livereload",
+    "start": "webpack --watch | bundle exec jekyll serve --livereload",
     "jbuild": "JEKYLL_ENV=production bundle exec jekyll build",
   },
   "author": "Denis Krasulin",

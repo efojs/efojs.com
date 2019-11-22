@@ -2,7 +2,6 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  watch: true,
   entry: path.join(__dirname, "webpack", "main"),
   output: {
     filename: "bundle.js",
