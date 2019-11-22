@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch | bundle exec jekyll serve --livereload",
+    "wbuild": "webpack -p",
     "jbuild": "JEKYLL_ENV=production bundle exec jekyll build",
   },
   "author": "Denis Krasulin",
