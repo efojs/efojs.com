@@ -25,14 +25,14 @@ class Histogram extends React.Component {
     this.handleHover = this.handleHover.bind(this)
     this.handleLegendHover = this.handleLegendHover.bind(this)
     this.handleLegendLeave = this.handleLegendLeave.bind(this)
+    this.chart = null
+    this.level = null
   }
 
   handleHover(e) {
-    let y = e.pageY - document.getElementById('chart').offsetTop - 1
-    const yMax = document.getElementById('chart').offsetHeight
-    y = y < 0 ? 0 : y
-    y = y >= yMax ? yMax : y
-    document.getElementById('level').style.top = y + "px"
+    const top = this.chart.getBoundingClientRect().top
+    let y = e.clientY - top - 1
+    this.level.style.top = y + "px"
   }
 
   handleLegendHover(e) {
@@ -56,6 +56,11 @@ class Histogram extends React.Component {
         el.classList.remove("dim")
       })
     }
+  }
+
+  componentDidMount() {
+    this.chart = document.getElementById('chart')
+    this.level = document.getElementById('level')
   }
 
   render() {
