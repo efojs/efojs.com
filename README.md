@@ -29,3 +29,10 @@ Run dev `npm start`
 ## Some used libraries
 
 - `axios` instead of `fetch` — https://stackoverflow.com/questions/40844297/what-is-difference-between-axios-and-fetch
+
+## Test
+- [Jest](https://jestjs.io/docs/en/getting-started)
+- [DOM Testing library (DTL) queries](https://testing-library.com/docs/dom-testing-library/cheatsheet)  
+- [Jest DTL matchers](https://github.com/testing-library/jest-dom#custom-matchers)  
+- [React DTL utilities](https://testing-library.com/docs/react-testing-library/cheatsheet)  
+- [DTL user events](https://github.com/testing-library/user-event)

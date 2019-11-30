@@ -167,14 +167,14 @@ class TabBar extends React.Component {
     })
 
     return (
-      <div className="tab-bar">
+      <div className="tab-bar" id="tab-bar">
         {tabs}
       </div>
     )
   }
 }
 
-class MainDialog extends React.Component {
+export class MainDialog extends React.Component {
   constructor(props) {
     super(props)
     this.switchTabs = this.switchTabs.bind(this)
