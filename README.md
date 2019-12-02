@@ -15,6 +15,10 @@ Front matter:
 - permalink (with trailing `/` -> `folder/index.html`)
 - excerpt (to avoid filtering from post, because it ruins code highlighting (putting all HTML in one line))
 
+Code highlight with coderay:
+- because default rouge adds extra indent to first line of code block (both in MD and HTML files)
+- but does not work with `{%- highlight -%}` (may be problem in HTML files)
+
 ## Webpack
 Base https://michaelmovsesov.com/articles/jekyll-es6-workflow  
 

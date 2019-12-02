@@ -1,0 +1,16 @@
+.highlighter-coderay {
+   padding: 1rem 1.2rem;
+   overflow-x: scroll;
+}
+.highlighter-coderay, code {
+  background-color: rgb(240, 240, 240);
+  font-family: monospace;
+  font-size: 120%;
+  span {
+    margin: 0.2rem 0;
+    display: inline-block;
+  }
+}
+code {
+  padding: 0.2rem 0.5rem;
+}
