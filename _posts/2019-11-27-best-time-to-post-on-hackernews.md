@@ -21,7 +21,7 @@ Found 875 duplicating timestamps among stories (NB: not all items which includes
 All objects on HackerNews have continuous numbering:
 > Stories, comments, jobs, Ask HNs and even polls are just items. They're identified by their ids, which are unique integers, and live under /v0/item/<id>, — HackerNews API docs
 
-At the moment of writing 849451 items have been posted since 29th of August (IDs between 21682006 and 20832555). Among those only 81300 are stories (HN's term for post). To find out which you could use [HackerNews API](https://github.com/HackerNews/API) and **fetch every of 849451 items** and check if it's a story for **117 hours** (assuming 2 requests per second). Or **periodically fetch** endpoint which [dumps IDs of **last 500 stories**](https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty) (it would take **38 minutes** to find these IDs by going backwards from [last item](https://hacker-news.firebaseio.com/v0/maxitem.json?print=pretty), in my case `21682006 - 21677389 = 4617 items` to check)
+At the moment of writing 849451 items have been posted since 29th of August (IDs between 21682006 and 20832555). Among those only 81300 are stories (HN's term for post). To find out which you could use [HackerNews API](https://github.com/HackerNews/API) and **fetch every of 849451 items** and check if it's a story for **117 hours** (assuming 2 requests per second). Or **periodically fetch** endpoint which [dumps IDs of **last 500 stories**](https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty) (it would take **38 minutes** to find these IDs by going backwards from [last item](https://hacker-news.firebaseio.com/v0/maxitem.json?print=pretty), in my case `21682006 - 21677389 = 4617` items to check)
 
 Back in the end of August I've set a script that gets those 500 IDs every two hours and saves new ones.
 
@@ -30,6 +30,9 @@ Back in the end of August I've set a script that gets those 500 IDs every two ho
 - load data
   - automate data fetch
 - prepare data
+- show
+  - number of items between posts
+  - possible time of fetching IDs of every 500 (from number of items between first and last stories)
 - find correlation
 
 ### Dataset
