@@ -13,7 +13,7 @@ Post chunk:
 
 Front matter:
 - permalink (with trailing `/` -> `folder/index.html`)
-
+- excerpt (to avoid filtering from post, because it ruins code highlighting (putting all HTML in one line))
 
 ## Webpack
 Base https://michaelmovsesov.com/articles/jekyll-es6-workflow  
