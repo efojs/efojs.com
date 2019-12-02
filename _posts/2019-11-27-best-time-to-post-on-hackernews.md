@@ -4,11 +4,11 @@ title: "Best time to post on HackerNews"
 date: "2019-11-27 15:46:53 +0300"
 category: fullstack
 name:
-description: Collect data over API and analyse it to find out correlation between post time and it's score
+description: Collect data over API and analyse it to find correlation between post time and it's score
 tech_stack: Python, Pandas
-status:
-permalink: hackernews/
 draft: True
+status: Work in progress
+permalink: best-time-to-post-on-hackernews/
 ---
 <!-- more -->
 ### TL;DR
