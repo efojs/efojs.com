@@ -23,7 +23,7 @@ Code highlight with coderay:
 Base https://michaelmovsesov.com/articles/jekyll-es6-workflow  
 
 Slightly modified:
-- newer modules `npm install webpack webpack-cli @babel/core babel-loader @babel/preset-env" --save-dev`
+- newer modules `npm install webpack webpack-cli @babel/core babel-loader @babel/preset-env --save-dev`
  https://webpack.js.org/loaders/babel-loader/
  https://webpack.js.org/guides/getting-started/
 - to avoid double livereload: `exclude: ['webpack']`
