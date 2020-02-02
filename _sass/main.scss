@@ -124,6 +124,10 @@ hr {
 img {
   width: 100%;
   display: block;
+  // max-width: 60rem;
+  // or
+  // max-height: 40rem;
+  // object-fit: cover;
 }
 
 body {
