@@ -1,4 +1,4 @@
 ---
-name: Full-stack development, UX, UI
+name: Full stack projects (UX, UI, development)
 handle: fullstack
 ---

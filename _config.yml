@@ -31,8 +31,10 @@ defaults:
 collections:
   categories:
      order:
-       - selecta.md
        - fullstack.md
+       - articles.md
+       - experiments.md
+       - apps.md
        - design.md
        - ideas.md
        - misc.md
