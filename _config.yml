@@ -31,8 +31,8 @@ defaults:
 collections:
   categories:
      order:
-       - fullstack.md
        - articles.md
+       - fullstack.md
        - experiments.md
        - apps.md
        - design.md
