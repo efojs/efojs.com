@@ -1,0 +1,96 @@
+---
+layout: "post"
+title: "Forrest Gump 500"
+date: "2021-02-09 03:53:18 +0300"
+category: experiments
+name:
+description: 'Run 500 miles in 2021. Twitter: <a href="https://twitter.com/hashtag/forrestgump500">#forrestgump500</a> by <a href="https://twitter.com/ForrestGump_500">@ForrestGump_500</a>'
+tech_stack: Vue.js, localStorage
+status:
+icon:
+nolink: true
+permalink: forrest-gump-500/
+draft: true
+---
+
+<!-- more -->
+<div id="forrest-app" class="run-forrest">
+  <div class="">
+    <label>Goal:</label>
+    <input type="number" v-model="goal" @change="changeGoal" step="0.01">
+    <select @change="changeUnit" v-model='unit'>
+      <option>mi</option>
+      <option>km</option>
+    </select>
+  </div>
+  <div class="">
+    Done — <% done %> <% unit %>
+  </div>
+  <div class="">
+    <label>Today:</label>
+    <input ref="add" value='0' type="number" step="0.1"> <% unit %>
+    <button @click="clickAddButton" type="button">Add</button>
+  </div>
+  <p>To run <% left %> <% unit %> in <% leftDays %> days —
+    <br> <% Math.round((left / leftDays) * 100) / 100 %> <% unit %>/day
+  </p>
+</div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+<script>
+  var app = new Vue({
+    el: '#forrest-app',
+    delimiters:['<%', '%>'],
+    data: {
+      unit: 'mi',
+      goal: 500,
+      done: 0,
+      total: 0,
+      dOY: 0
+    },
+    methods: {
+      changeGoal (event) {
+        localStorage.runGoal = this.goal
+      },
+      clickAddButton () {
+        this.done = this.done + Number(this.$refs.add.value)
+        localStorage.runDone = this.done
+        this.$refs.add.value = 0
+      },
+      changeUnit (event) {
+        localStorage.runUnit = this.unit
+      }
+    },
+    computed: {
+      left () {
+        return this.goal - this.done
+      },
+      leftDays () {
+        return this.total - this.dOY
+      }
+    },
+    mounted () {
+      this.hostname = window.location.hostname
+
+      if (localStorage.runGoal !== undefined) {
+        this.goal = Number(localStorage.runGoal)
+      }
+      if (localStorage.runDone !== undefined) {
+        this.done = Number(localStorage.runDone)
+      }
+      if (localStorage.runUnit !== undefined) {
+        this.unit = localStorage.runUnit
+      }
+
+      const now = new Date()
+      const start = new Date(now.getFullYear(), 0, 0)
+      const end = new Date(now.getFullYear(), 11, 31)
+      const diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000)
+      const oneDay = 1000 * 60 * 60 * 24
+      this.total = Math.floor((end - start) / oneDay)
+      const day = Math.floor(diff / oneDay)
+      this.dOY = day
+    }
+  })
+</script>
